@@ -4,8 +4,10 @@ Generate product labels from your OpenBravoPOS database. (PHP)
 
 ## Features
 
-- Easy web interface to search for/pick products
+- Easy AJAX-driven web interface to search for/pick products
 - Ability to edit product attributes before printing
+- Ability to seamlessly generate beautiful PDF files for printing on popular
+  adhesive labels (using [glabels](http://glabels.org))
 
 ## Requirements
 
@@ -28,3 +30,6 @@ Generate product labels from your OpenBravoPOS database. (PHP)
   CSV file. This file is identical to what's fed to glabels behind the scene
   for PDF generation. Use this CSV file to design and test your label template,
   and when you're done upload it to your server.
+- When printing your PDF on to adhesive labels, make sure to disable any
+  scaling options on your PDF viewer's print dialog, otherwise it may not line
+  up with the stickers!
