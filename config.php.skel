@@ -1,0 +1,9 @@
+<?php
+$config=[
+	"user"     => "", #openBravo database username
+	"password" => "", #openBravo database password
+	"host"     => "", #openBravo database hostname
+	"db"       => "", #openBravo database name
+	"template" => ""  #the glabels template file for PDF generation
+];
+?>

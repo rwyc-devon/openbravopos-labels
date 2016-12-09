@@ -1,0 +1,251 @@
+*
+{
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	box-sizing: border-box;
+	border-collapse: collapse;
+	color: #313;
+	list-style-type: none;
+}
+body
+{
+	font-family: sans;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+h1
+{
+	text-align: center;
+	background: #dcf;
+}
+main
+{
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+	overflow: hidden;
+	flex: 1;
+}
+#search-pane
+{
+	display: flex;
+	flex-direction: column;
+	background: #eee;
+}
+form, table
+{
+	box-shadow: 0.25em 0.25em 0.5em #ddd;
+}
+form
+{
+	display: flex;
+	background: #a8c;
+	padding: 0.25em;
+	align-items: flex-stretch;
+	justify-content: center;
+	height: 2em;
+}
+input, select
+{
+	border: none;
+	line-height: 1em;
+	font-size: 1rem;
+	padding: 0 0.25em;
+	background: #fff;
+}
+input[type="text"]
+{
+	flex-shrink: 1;
+	min-width: 5em;
+}
+input[type="submit"],
+input[type="button"],
+form button,
+select,
+option
+{
+	background: #638;
+	color: #ede;
+	cursor: pointer;
+	border-left: 1px solid #ede;
+}
+input[type="submit"]:hover,
+input[type="button"]:hover,
+form button:hover,
+select:hover,
+option:hover,
+input[type="submit"]:focus,
+input[type="button"]:focus,
+form button:focus,
+select:focus,
+option:focus
+{
+	background: #86a;
+}
+input[type="submit"]:active,
+input[type="button"]:active,
+form button:active,
+select:active,
+option:active
+{
+	background: #416;
+}
+form > *:first-child
+{
+	border-radius: 0.25em 0 0 0.25em;
+	margin-left: 0.25em;
+	border-left: none;
+}
+form > *:last-child
+{
+	border-radius: 0 0.25em 0.25em 0;
+}
+#search-results
+{
+	overflow-y: auto;
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 0.25em;
+}
+#search-results li
+{
+	cursor: pointer;
+	background: #fff;
+}
+#search-results li,
+#products li
+{
+	margin: 0.25em;
+	padding: 0.25em 0.5em;
+	border-radius: 0.5em;
+	position: relative;
+	box-shadow: 0.25em 0.25em 0.5em #eee;
+}
+#search-results li:hover
+{
+	background: #dce;
+}
+#search-results li:hover::after
+{
+	content: "";
+	border: 0.75em solid transparent;
+	border-left-color: #538;
+	border-right: none;
+	position: absolute;
+	right: 0.5em;
+	top: 50%;
+	margin-top: -0.75em;
+}
+#search-results li .price,
+#search-results li .sku
+{
+	font-family: monospace;
+}
+#search-results li .price
+{
+	margin-left: 2em;
+}
+#search-results li .price::before
+{
+	content: "$";
+}
+#search-results::after
+{
+	content: "a";
+	color: transparent;
+	line-height: 0;
+}
+#search-results h2
+{
+	font-size: 1rem;
+}
+#editor
+{
+	flex: 1;
+	border-left: 3px solid #ddd;
+	display: flex;
+	flex-direction: column;
+}
+#products
+{
+	padding: 0.25em;
+	overflow-y: auto;
+	flex: 1;
+}
+#products li
+{
+	width: 20em;
+	overflow: hidden;
+	background: #dcf;
+	display: inline-block;
+}
+#products li *
+{
+	line-height: 1.75em;
+}
+#products li input
+{
+	background: none;
+}
+#products li input[type="text"]
+{
+	font-weight: bold;
+	display: block;
+	width: 100%;
+}
+#products li input[type="number"]
+{
+	width: 3em;
+	background: #fff;
+	border-radius: 0.25em;
+	float: right;
+	margin-right: -0.25em;
+}
+#products li .sku::before
+{
+	content: "SKU: ";
+	font-style: italic;
+}
+#products li .sku
+{
+	font-family: monospace;
+	cursor: default;
+}
+#products li button
+{
+	display: none;
+}
+#products li:hover button,
+#products li:focus button,
+#products li button:focus
+{
+	display: block;
+}
+#products li input:focus ~ button
+{
+	display: none;
+}
+#products li button::after
+{
+	content: "delete";
+}
+#products li button
+{
+	line-height: 1.25em;
+	position: absolute;
+	background: #a22;
+	color: #fff;
+	border: none;
+	border-radius: 0.5em;
+	top: 0.25em;
+	right: 0.25em;
+	cursor: pointer;
+}
+#products li button:hover,
+#products li button:focus
+{
+	background: #c33;
+}
