@@ -33,3 +33,7 @@ Generate product labels from your OpenBravoPOS database. (PHP)
 - When printing your PDF on to adhesive labels, make sure to disable any
   scaling options on your PDF viewer's print dialog, otherwise it may not line
   up with the stickers!
+- For really fast turn-around testing with a headless server, put your template
+  in an NFS share, and mount it on your server. You can edit the template on
+  your workstation, and to test it just click "Get PDF" in the app to preview
+  your changes live.
