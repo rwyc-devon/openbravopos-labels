@@ -7,9 +7,10 @@ require_once("../include/csv.php");
 require_once("../config.php");
 echo ("${config["template"]}");
 $fh=createCsv(json_decode($_POST["data"], true));
-$pdf=tempnam(sys_get_temp_dir(), "labels-pdf-");
+$pdf=escapeshellarg(tempnam(sys_get_temp_dir(), "labels-pdf-"));
+$templatefile=escapeshellarg($config["template"]);
 $glabels=proc_open(
-	"glabels-3-batch '${config["template"]}' -i - -o '$pdf'",
+	"glabels-3-batch $templatefile -i - -o '$pdf'",
 	[
 		0 => $fh,
 		1 => ["pipe", "w"],
