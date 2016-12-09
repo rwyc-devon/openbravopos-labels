@@ -13,7 +13,7 @@ Generate product labels from your OpenBravoPOS database. (PHP)
 
 - Linux (tested on Ubuntu 16.04, other distros should work too)
 - Apache, PHP 7.0
-- `glabels-3` (`sudo apt install glabels-3`), plus any needed fonts.
+- `glabels-3` (`sudo apt install glabels`), plus any needed fonts.
 - Mysql, hosting an OpenBravoPOS database
 
 ## Installation
