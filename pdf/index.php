@@ -1,16 +1,15 @@
 <?php
 #send headers
-header("Content-type: text/plain");
 header("Content-type: application/pdf");
 header("Content-disposition: attachment; filename=\"labels.pdf\"");
 require_once("../include/csv.php");
 require_once("../config.php");
-echo ("${config["template"]}");
 $fh=createCsv(json_decode($_POST["data"], true));
-$pdf=escapeshellarg(tempnam(sys_get_temp_dir(), "labels-pdf-"));
+$pdf=tempnam(sys_get_temp_dir(), "labels-pdf-");
+$pdfarg=escapeshellarg($pdf);
 $templatefile=escapeshellarg($config["template"]);
 $glabels=proc_open(
-	"glabels-3-batch $templatefile -i - -o '$pdf'",
+	"glabels-3-batch $templatefile -i - -o $pdfarg",
 	[
 		0 => $fh,
 		1 => ["pipe", "w"],
